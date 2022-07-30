@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 10
+  timeout: 10000
+  port: 5432
+
+development:
+  <<: *default
+  host: localhost
+  database: sdent_dev
+
+test:
+  <<: *default
+  database: sdent_test
+
+production:
+  <<: *default
