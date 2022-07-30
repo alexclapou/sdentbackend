@@ -1,6 +1,5 @@
 class Auth::AuthenticationController < ApplicationController
   before_action :redirect_if_logged_in, only: %i[login register]
-  before_action :user_authorized, only: %i[logout]
 
   def login
     user = User.find_by(email: params[:user][:email].downcase)
